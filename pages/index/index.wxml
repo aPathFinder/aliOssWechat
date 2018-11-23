@@ -1,0 +1,15 @@
+<!-- index.wxml -->
+<view class="container">
+    <view class="userinfo">
+        <button type='primary' bindtap='chooseImg'>选择照片</button>
+        <image wx:if="{{imgSrc != ''}}" src="{{imgSrc}}" />
+    </view>
+    <view class="userinfo">
+        <button type='primary' bindtap='{{recordStatus ? "stopRecord" : "startRecord"}}'>{{recordStatus ? '停止录制':'开始录音'}}</button>
+        <button class='playBtn' wx:if="{{autidoSrc != ''}}" type="primary" bindtap="handlePlay">开始播放</button>
+    </view>
+    <view class="userinfo video">
+        <button class="btn" type="primary" bindtap="handleMakeVideo">录制视频</button>
+        <video wx:if="{{videoSrc != ''}}" src="{{videoSrc}}" autoplay='true' muted='true' page-gesture='true' bindended='bindended'></video>
+    </view>
+</view>
