@@ -1,5 +1,3 @@
-const uploadImage = require('../../utils/uploadFile.js');
-const util = require('../../utils/util.js');
 import ImageUpload from '../../upload/Class/ImageUpload';
 import AudioUpload from '../../upload/Class/AudioUpload';
 import AudioPlayer from '../../upload/Class/AudioPlayer';
