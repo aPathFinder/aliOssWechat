@@ -30,7 +30,7 @@ class VideoUpload extends Upload {
             success: function (videoSrc) { 
                 typeof(this.successFunc) == 'function' && this.successFunc(videoSrc);
             },
-            process(res) { 
+            progress: function(res) { 
                 typeof(this.processFunc) == 'function' && this.processFunc(res);
             },
             fail: function (err) {

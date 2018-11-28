@@ -42,15 +42,14 @@ class Upload {
             success(res) {
                 if (res.statusCode != 200) {failc(new Error('上传错误:' + JSON.stringify(res))); return;}
                 typeof(self.success) == 'function' && self.success(uploadImageUrl + self.aliyunFileKey); 
-                upload.onProgressUpdate((res) => {
-                    console.log(self.progress);
-                    typeof(self.progress) == 'function' && self.progress(res);
-                });
             },
             fail(err) {
                 typeof(self.fail) == 'function' && self.fail(err);
             }
-        })
+        });
+        upload.onProgressUpdate((res) => {
+            typeof(self.progress) == 'function' && self.progress(res);
+        });
     }
 
     _getPolicyBase64() {
